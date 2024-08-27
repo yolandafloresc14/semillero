@@ -1,13 +1,36 @@
+<nz-layout class="layout">
+  <nz-header class="header">
+    <div class="header-item">
+      <span class="header-menu-icon"
+        nz-icon 
+        nzType="menu" 
+        nzTheme="outline"
+      ></span>
+    </div>
+    <div class="header-item">
+      <span
+        class="header-bell-icon"
+        nz-icon
+        nzType="bell"
+        nzTheme="outline"
+      ></span>
+    </div>
+    <div class="header-item">
+      <div class="header__user">
+        <div class="header__user-name">Nombre de Usuario</div>
+        <div class="header__user-rol" >Rol</div>
+        <nz-avatar class="header__user-avatar" [nzSize]="40" nzIcon="user" nzSrc="assets/private/interested/user-avatar_000001.jpg"></nz-avatar>
+      </div>
+      <span
+        class="header-down-icon"
+        nz-icon
+        nzType="down"
+        nzTheme="outline"
+      ></span>
+    </div>
+  </nz-header>
 <nz-layout>
-    <nz-header>
-      <div class="logo"></div>
-      <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
-        <li nz-menu-item nzSelected>nav 1</li>
-        <li nz-menu-item>nav 2</li>
-        <li nz-menu-item>nav 3</li>
-      </ul>
-    </nz-header>
-    <nz-layout>
+
       <nz-sider nzWidth="200px" nzTheme="light">
         <ul nz-menu nzMode="inline" class="sider-menu">
           <li nz-submenu nzOpen nzIcon="user" nzTitle="subnav 1">
@@ -38,9 +61,9 @@
       </nz-sider>
       <nz-layout class="inner-layout">
         <nz-breadcrumb>
-          <nz-breadcrumb-item>Home</nz-breadcrumb-item>
-          <nz-breadcrumb-item>List</nz-breadcrumb-item>
-          <nz-breadcrumb-item>App</nz-breadcrumb-item>
+          <nz-breadcrumb-item>Inicio</nz-breadcrumb-item>
+          <nz-breadcrumb-item>Semana 1</nz-breadcrumb-item>
+          <nz-breadcrumb-item>Ver Estado</nz-breadcrumb-item>
         </nz-breadcrumb>
         <nz-content>Content</nz-content>
       </nz-layout>
