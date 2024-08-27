@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from '../../core/components/header/header.component';
-import { NavBarComponent } from '../../core/components/nav-bar/nav-bar.component';
+import { SideBarComponent } from '../../core/components/side-bar/side-bar.component';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
 
 @Component({
   selector: 'app-student',
   standalone: true,
   imports: [
     HeaderComponent,
-    NavBarComponent
+    SideBarComponent,
+    NzLayoutModule
   ],
   templateUrl: './student.component.html',
   styleUrl: './student.component.css'

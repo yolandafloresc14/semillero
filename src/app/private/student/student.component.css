@@ -1,0 +1,12 @@
+.dashboard-layout {
+    display: flex;
+    width: 100vw;
+    height: calc(100vh - 64px);
+    overflow: hidden;
+}
+  
+nz-layout {
+    display: block;
+    height: 100%;
+    overflow-x: hidden;
+}

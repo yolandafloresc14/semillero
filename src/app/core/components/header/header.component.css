@@ -27,6 +27,28 @@
   grid-column: 3;
 }
 
+.header-menu-icon {
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  color: #0616D6;
+  transition: color 0.3s;
+}
+
+.header-bell-icon {
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  color: #0616D6;
+  transition: color 0.3s;
+}
+
+.header-down-icon {
+  cursor: pointer;
+  color: #0616D6;
+  transition: color 0.3s;
+}
+
 .header__user {
   display: grid;
   grid-template-columns: 1fr 40px;
@@ -46,7 +68,7 @@
 .header__user-rol {
   grid-row: 2;
   grid-column: 1;
-  color: #2f32d8;
+  color: #0616D6;
   font-size: 14px;
   line-height: 14px;
 }
@@ -57,25 +79,4 @@
   line-height: 14px;
 }
 
-  .header-menu {
-    line-height: 64px;
-  }
-
-  .sider-menu {
-    height: 100%;
-    border-right: 0;
-  }
-
-  .inner-layout {
-    padding: 0 24px 24px;
-  }
-
-  nz-breadcrumb {
-    margin: 16px 0;
-  }
-
-  nz-content {
-    background: #fff;
-    padding: 24px;
-    min-height: 280px;
-  }
+  
