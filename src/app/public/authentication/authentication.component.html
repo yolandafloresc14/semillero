@@ -1,1 +1,17 @@
-<p>authentication works!</p>
+
+<div class="authentication">
+    <main class="body">
+      <section class="main">
+        <div class="logo-section">
+          <img class="image-icon" loading="lazy" alt="" src="assets/logo.png" />
+        </div>
+        <div class="access-control">
+          <button class="control-de-acceso-wrapper">
+            <b class="control-de-acceso">CONTROL DE ACCESO</b>
+          </button>
+        </div>
+        <div class="login-selector"><student-login1 [aLUMNO]="'ALUMNO'" [icon]="'assets/icon.svg'" [onStudentButtonClick]="onStudentButtonClick"> </student-login1><student-login1 [propBackgroundColor]="'#25c821'" [aLUMNO]="'DOCENTE'" [icon]="'assets/icon.svg'" [onStudentButtonClick]="onDocenteButtonClick" [propBackgroundColor1]="'rgba(66, 139, 64, 0.85)'"> </student-login1>
+        </div>
+      </section>
+    </main>
+  </div>

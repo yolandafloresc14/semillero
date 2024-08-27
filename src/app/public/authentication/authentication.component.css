@@ -1,0 +1,138 @@
+
+  .image-icon {
+    height: 181px;
+    width: 184px;
+    position: relative;
+    object-fit: cover;
+  }
+  .logo-section {
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5.5px 7px;
+  }
+  .control-de-acceso {
+    flex: 1;
+    position: relative;
+    font-size: 36px;
+    line-height: 25px;
+    display: inline-block;
+    font-family: "Roboto Condensed";
+    color: #fff;
+    text-align: center;
+    max-width: 100%;
+  }
+  .control-de-acceso-wrapper {
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    padding: 18px 19px 13px;
+    background-color: #2a38db;
+    width: 556px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 100%;
+  }
+  .control-de-acceso-wrapper:hover {
+    background-color: #525eff;
+    border: 1px solid rgba(51, 51, 51, 0.25);
+    box-sizing: border-box;
+  }
+  .access-control,
+  .login-selector {
+    align-self: stretch;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+  }
+  .access-control {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .login-selector {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 10px 332px 15px;
+    gap: 30px;
+  }
+  .main {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    gap: 10px;
+    max-width: 100%;
+  }
+  .authentication,
+  .body {
+    overflow: hidden;
+    display: flex;
+  }
+  .body {
+    align-self: stretch;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 100%;
+  }
+  .authentication {
+    width: 100%;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+  @media screen and (max-width: 1200px) {
+    .login-selector {
+      padding-left: 166px;
+      padding-right: 166px;
+      box-sizing: border-box;
+    }
+  }
+  @media screen and (max-width: 1050px) {
+    .control-de-acceso {
+      font-size: 29px;
+      line-height: 20px;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    .login-selector {
+      gap: 15px;
+      padding-left: 83px;
+      padding-right: 83px;
+      box-sizing: border-box;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .control-de-acceso {
+      font-size: 22px;
+      line-height: 15px;
+    }
+    .login-selector {
+      padding-left: 20px;
+      padding-right: 20px;
+      box-sizing: border-box;
+    }
+  }
+  
