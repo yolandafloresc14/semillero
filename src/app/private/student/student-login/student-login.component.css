@@ -1,0 +1,351 @@
+.bienvenido1,
+.ingrese-su-usuario1 {
+  margin: 0;
+  align-self: stretch;
+  height: 67.5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f8f8f8;
+}
+.bienvenido1 {
+  font-size: inherit;
+  letter-spacing: -0.02em;
+  line-height: 120%;
+  font-weight: 700;
+  font-family: inherit;
+
+}
+.ingrese-su-usuario1 {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 400;
+  font-family: Roboto;
+}
+.bienvenido-group {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+  box-sizing: border-box;
+  gap: 10px;
+  max-width: 100%;
+}
+.image-251,
+.welcome-section1 {
+  width: 608px;
+  border-radius: 0 150px 150px 0;
+  max-width: 100%;
+}
+.image-251 {
+  height: 720px;
+  position: relative;
+  display: none;
+}
+.welcome-section1 {
+  background-color: rgba(4, 14, 129, 0.95);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 277.5px 27px 277.5px 20px;
+  box-sizing: border-box;
+  gap: 10px;
+  min-width: 608px;
+}
+.icon1 {
+  height: 109px;
+  width: 99px;
+  position: relative;
+  display: none;
+}
+.image-icon2 {
+  height: 181px;
+  width: 184px;
+  position: relative;
+  object-fit: cover;
+}
+.institucin-educativa-ricardo1 {
+  align-self: stretch;
+  height: 155px;
+  position: relative;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.institucin-educativa-ricardo-container,
+.logo1 {
+  overflow: hidden;
+  display: flex;
+  box-sizing: border-box;
+}
+.institucin-educativa-ricardo-container {
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+  min-width: 142px;
+}
+.logo1 {
+  width: 437px;
+  flex-shrink: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 10px;
+  gap: 15px;
+  max-width: 100%;
+}
+.login-alumno {
+  margin: 0;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  line-height: 25px;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  max-width: 100%;
+}
+.login-alumno-wrapper {
+  width: 393px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 18px 19px 13px;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.alumno1,
+.login-title1 {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.login-title1 {
+  align-self: stretch;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 5px 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  font-size: 36px;
+  color: #007aff;
+  font-family: "Be Vietnam";
+}
+.alumno1 {
+  margin: 0;
+  width: 203px;
+  height: 29px;
+  position: relative;
+  font-size: inherit;
+  line-height: 25px;
+  font-weight: 700;
+  font-family: inherit;
+  justify-content: center;
+}
+.icono1,
+.ttulo1 {
+  overflow: hidden;
+  max-width: 100%;
+}
+.ttulo1 {
+  align-self: stretch;
+  height: 296px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px 0 0;
+  box-sizing: border-box;
+  gap: 10px;
+}
+.icono1 {
+  width: 340px;
+  flex: 1;
+  display: none;
+}
+.ingresar1 {
+  height: 30px;
+  flex: 1;
+  position: relative;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.botn1,
+.frame-alumno1 {
+  overflow: hidden;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.botn1 {
+  width: 340px;
+  background-color: rgba(161, 60, 30, 0.85);
+  display: none;
+  flex-direction: row;
+  padding: 10px;
+  box-sizing: border-box;
+  max-width: 100%;
+  font-family: Roboto;
+}
+.frame-alumno1 {
+  width: 417px;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  flex-shrink: 0;
+  flex-direction: column;
+  padding: 5px 10px 4px;
+  gap: 15px;
+}
+.frame-alumno1,
+.login-form-container1,
+.main2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.main2 {
+  flex: 1;
+  background-color: #fff;
+  overflow-y: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 50px 30px 40px;
+  gap: 20px;
+  min-width: 437px;
+  font-size: 18px;
+  color: #040e81;
+  font-family: Tauri;
+}
+.body,
+.student-login {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.body {
+  flex: 1;
+  justify-content: center;
+  row-gap: 20px;
+  max-width: 100%;
+  text-align: center;
+  font-size: 48px;
+  color: #fff;
+  font-family: Inter;
+}
+.student-login {
+  width: 100%;
+  position: relative;
+  background-color: #f8f8f8;
+  justify-content: flex-start;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+/* Centrar el formulario */
+.login-form {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 45px 100px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Espaciado entre los elementos del formulario */
+  .nz-form-item {
+    margin-bottom: 16px;
+  }
+  
+  /* Estilo de los inputs */
+  input[nz-input] {
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    height: 20px;
+  }
+
+  
+  /* Mensajes de error */
+  .nz-form-control {
+    position: relative;
+  }
+  
+  
+  /* Estilo del botón */
+  .login-form-button {
+    width: 100%;
+    background-color: #007bff; /* Color azul brillante */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px ;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    height: 35px;
+  }
+  
+  .login-form-button:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el cursor */
+  }
+  
+  /* Estilo de inputs en error */
+  input[nz-input].ng-invalid.ng-touched {
+    border-color: red !important;
+    box-shadow: none;
+  }
+  
+  /* Centrar el texto en el botón */
+  .login-form-button {
+    text-align: center;
+  }
+  
+  /* Ajuste del estilo del placeholder de los inputs */
+  input[nz-input]::placeholder {
+    color: #c4c4c4;
+    opacity: 1;
+  }
+  
+  input[nz-input]::-webkit-input-placeholder {
+    color: #c4c4c4;
+  }
+  
+  input[nz-input]:-ms-input-placeholder {
+    color: #c4c4c4;
+  }
+  
+  /* Estilo del icono dentro del input */
+  .nz-input-group .anticon {
+    color: #007bff;
+  }
+  
+
+  label{
+    text-align: left;
+  }
+  
