@@ -1,0 +1,62 @@
+<app-header></app-header>
+<nz-layout>
+    <nz-layout>
+      <nz-layout class="inner-layout">
+        <nz-breadcrumb>
+          <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+          <nz-breadcrumb-item>Usuario</nz-breadcrumb-item>
+          <nz-breadcrumb-item>Perfil</nz-breadcrumb-item>
+        </nz-breadcrumb>
+        <nz-content>
+          <main class="profile-container">
+            <h1 class="profile-title">Mi Perfil</h1>
+            
+            <section class="profile-card">
+              <div class="user-info">
+                <img src="" alt="User profile picture" class="profile-image">
+                <div class="user-details">
+                  <h2 class="user-name">{{ user.name }}</h2>
+                  <p class="user-role">{{ user.role }}</p>
+                </div>
+              </div>
+            </section>
+          
+            <section class="personal-info-card">
+              <h2 class="section-title">Información Personal</h2>
+              <div class="info-grid">
+                <div class="info-column">
+                  <div class="info-item">
+                    <h3 class="info-label">Nombres</h3>
+                    <p class="info-value">{{ user.firstName }}</p>
+                  </div>
+                  <div class="info-item">
+                    <h3 class="info-label">Correo electrónico</h3>
+                    <p class="info-value">{{ user.email }}</p>
+                  </div>
+                  <div class="info-item">
+                    <h3 class="info-label">Grado</h3>
+                    <p class="info-value">{{ user.grade }}</p>
+                  </div>
+                </div>
+                <div class="info-column">
+                  <div class="info-item">
+                    <h3 class="info-label">Apellidos</h3>
+                    <p class="info-value">{{ user.lastName }}</p>
+                  </div>
+                  <div class="info-item">
+                    <h3 class="info-label">Usuario</h3>
+                    <p class="info-value">{{ user.username }}</p>
+                  </div>
+                  <div class="info-item">
+                    <h3 class="info-label">Teléfono</h3>
+                    <p class="info-value">{{ user.phone }}</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </main>
+        </nz-content>
+              
+      </nz-layout>
+    </nz-layout>
+  </nz-layout>
