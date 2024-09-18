@@ -17,7 +17,7 @@ export class AuthenticationComponent {
   constructor(private router: Router) {}
 
   onStudentButtonClick() {
-    this.router.navigate(["/studentlogin"]);
+    this.router.navigate(["/studentLogin"]);
   }
 
   onDocenteButtonClick() {
