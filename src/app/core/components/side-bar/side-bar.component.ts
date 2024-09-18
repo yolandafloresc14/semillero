@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
@@ -19,6 +19,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
   templateUrl: './side-bar.component.html',
   styleUrl: './side-bar.component.css'
 })
-export class SideBarComponent {
 
+export class SideBarComponent {
+  @Input() despliegue?:boolean
 }

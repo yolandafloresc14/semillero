@@ -17,5 +17,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './student.component.css'
 })
 export class StudentComponent {
-
+  isDespliegue:boolean = false
 }

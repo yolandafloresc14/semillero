@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -20,5 +20,12 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 })
 
 export class HeaderComponent {
-  
+  @Input() despliegue?:boolean;
+  @Output() despliegueChange = new EventEmitter<boolean>
+
+  cambiar() {
+    this.despliegue = !this.despliegue
+    this.despliegueChange.emit(this.despliegue)
+    console.log("Esto funciona")
+  }
 }

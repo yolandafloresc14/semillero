@@ -5,6 +5,7 @@
         nz-icon 
         nzType="menu" 
         nzTheme="outline"
+        (click)="cambiar()"
       ></span>
     </div>
     <div class="header-item">
@@ -18,7 +19,6 @@
     <div class="header-item">
       <div class="header__user">
         <div class="header__user-name">Nombre de Usuario</div>
-        <div class="header__user-rol" >Rol</div>
         <nz-avatar class="header__user-avatar" [nzSize]="40" nzIcon="user" nzSrc="assets/private/interested/user-avatar_000001.jpg"></nz-avatar>
       </div>
       <span

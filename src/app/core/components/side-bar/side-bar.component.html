@@ -1,5 +1,9 @@
 <nz-layout class="side-bar">
-    <nz-sider nzTheme="light">
+    <nz-sider 
+    nzCollapsible
+    [nzCollapsed]="despliegue"
+      [nzTrigger]="null"
+    nzTheme="light">
       <ul nz-menu nzMode="inline">
         <li nz-menu-item routerLink="home" routerLinkActive="active">
             <span nz-icon nzType="home"></span>

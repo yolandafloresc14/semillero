@@ -1,6 +1,7 @@
-<app-header/>
+<app-header [(despliegue)]="isDespliegue"/>
 <div class="dashboard-layout">
-    <app-side-bar/>
+    <app-side-bar [despliegue]="isDespliegue"/>
+
     <nz-layout>
         <nz-content>
           <div class="margen"></div>
