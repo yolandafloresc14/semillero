@@ -32,7 +32,7 @@ export class StudentLoginComponent {
   submitForm(): void {
     if (this.validateForm.valid) {
       console.log('submit', this.validateForm.value);
-      this.router.navigate(['/student/home']);
+      this.router.navigate(['/student']);
     } else {
       Object.values(this.validateForm.controls).forEach(control => {
         if (control.invalid) {
