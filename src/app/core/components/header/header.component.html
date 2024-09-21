@@ -7,6 +7,9 @@
         nzTheme="outline"
         (click)="cambiar()"
       ></span>
+      <div class="header-logo">
+        <img src="assets/logo.png" alt="Logo Escuela"/>
+      </div>
     </div>
     <div class="header-item">
       <span
@@ -21,12 +24,30 @@
         <div class="header__user-name">Nombre de Usuario</div>
         <nz-avatar class="header__user-avatar" [nzSize]="40" nzIcon="user" nzSrc="assets/private/interested/user-avatar_000001.jpg"></nz-avatar>
       </div>
-      <span
-        class="header-down-icon"
-        nz-icon
-        nzType="down"
-        nzTheme="outline"
-      ></span>
+      <a nz-dropdown [nzDropdownMenu]="menu">
+        <span
+          class="header-down-icon"
+          nz-icon
+          nzType="down"
+          nzTheme="outline"
+        ></span>
+      </a>
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu nzSelectable>
+          <li nz-menu-item>
+            <span nz-icon nzType="user" nzTheme="outline"></span>
+            Perfil
+          </li>
+          <li nz-menu-item>
+            <span nz-icon nzType="star" nzTheme="outline"></span>
+            Calificaciones
+          </li>
+          <li nz-menu-item nzDanger>
+            <span nz-icon nzType="logout" nzTheme="outline"></span>
+            Cerrar Sesión
+          </li>
+        </ul>
+      </nz-dropdown-menu>
     </div>
   </nz-header>
 </nz-layout>
@@ -55,7 +76,7 @@
           </li>
         </ul>
       </nz-sider>
-      <!--<nz-layout class="inner-layout">
+      <nz-layout class="inner-layout">
         <nz-breadcrumb>
           <nz-breadcrumb-item>Inicio</nz-breadcrumb-item>
           <nz-breadcrumb-item>Semana 1</nz-breadcrumb-item>

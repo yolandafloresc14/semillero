@@ -1,11 +1,3 @@
-.logo {
-  width: 120px;
-  height: 31px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px 30px 16px 0;
-  float: left;
-}
-
 .layout {
   width: 100vw;
 }
@@ -13,7 +5,7 @@
 .header {
   background-color: #fff;
   display: grid;
-  grid-template-columns: 0px 1fr 66px max-content;
+  grid-template-columns: 66px 1fr 66px max-content;
   grid-template-rows: 64px;
 }
 
@@ -33,6 +25,23 @@
   cursor: pointer;
   color: #0616D6;
   transition: color 0.3s;
+}
+
+.header-menu-icon:hover {
+  color:  #0616D6;
+}
+
+.header-logo {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  width: auto;
+  height: auto;
+  padding: 20px;
+}
+
+.header-logo img {
+  width: 50px;
 }
 
 .header-bell-icon {
