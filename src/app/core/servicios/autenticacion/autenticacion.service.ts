@@ -4,17 +4,17 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://109.199.104.41:3001/api_semillero/alumnos/login';  // URL de Login
+  private apiUrl = 'http://109.199.104.41:3001/api_semillero/alumnos/login'; // URL de Login
 
   constructor(private http: HttpClient) {}
 
   // Método para iniciar sesión
   login(usuario: string, clave: string): Observable<any> {
     return this.http.post<any>(this.apiUrl, { usuario, clave }).pipe(
-      map(response => {
+      map((response) => {
         // Si el login es exitoso, guardar el token
         if (response && response.token) {
           localStorage.setItem('authToken', response.token);
@@ -28,7 +28,7 @@ export class AuthService {
   // Manejo de errores
   private handleError(error: HttpErrorResponse): Observable<never> {
     let errorMessage = 'Ocurrió un error desconocido.';
-    
+
     if (error.error instanceof ErrorEvent) {
       // Error del lado del cliente
       errorMessage = `Error del cliente: ${error.error.message}`;
@@ -39,5 +39,20 @@ export class AuthService {
 
     console.error(errorMessage);
     return throwError(() => new Error(errorMessage));
+  }
+
+  // Método para obtener el token
+  getToken() {
+    return localStorage.getItem('authToken');
+  }
+
+  // Método para cerrar sesión
+  logout() {
+    localStorage.removeItem('authToken');
+  }
+
+  // Método para verificar si el usuario está autenticado
+  isAuthenticated() {
+    return !!localStorage.getItem('authToken');
   }
 }
