@@ -6,25 +6,28 @@ import { authGuard } from './core/guards/auth/auth.guard';
 import { HomeComponent } from './private/student/pages/home/home.component';
 import { DocenteLoginComponent } from './private/teacher/docente-login/docente-login.component';
 import { TeacherComponent } from './private/teacher/teacher.component';
+import { PersonalInfoStudentComponent } from './private/student/pages/personal-info-student/personal-info-student.component';
+import { HomeTComponent } from './private/teacher/pages/home-t/home-t.component';
+import { GeneralComponent } from './private/student/pages/weeks/week-1/general/general.component';
 
 export const routes: Routes = [
-  {
-    path: 'student',
-    component: StudentComponent,
-    children: [{ path: 'home', component: HomeComponent }],
-  },
-  { path: 'teacher', component: TeacherComponent },
-  { path: 'login', component: AuthenticationComponent },
-  {
-    path: 'studentlogin',
-    component: StudentLoginComponent,
-    canActivate: [authGuard],
-  },
-  {
-    path: 'docentelogin',
-    component: DocenteLoginComponent,
-    canActivate: [authGuard],
-  },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', redirectTo: '/login' },
+    {path: 'student', component: StudentComponent,
+        children: [
+            {path: '', redirectTo: 'home', pathMatch: 'full'},
+            {path: 'home', component: HomeComponent},
+            {path: 'perfil', component: PersonalInfoStudentComponent}
+        ]
+    },
+    {path: 'teacher', component: TeacherComponent,
+        children: [
+            {path: '', redirectTo: 'home', pathMatch: 'full'},
+            {path: 'home', component: HomeTComponent},
+            {path: 'general', component: GeneralComponent}
+        ]
+    },
+    {path: 'login', component: AuthenticationComponent},
+    {path: 'studentlogin', component: StudentLoginComponent, canActivate: [authGuard]},
+    {path: 'docentelogin', component: DocenteLoginComponent, canActivate: [authGuard]},
+    {path: '', redirectTo: '/login', pathMatch: 'full'},
+    //{path: '**', redirectTo: '/login'},
 ];
