@@ -1,50 +1,47 @@
+.image-icon {
+  height: 181px;
+  width: 184px;
+  position: relative;
+  object-fit: cover;
+}
 
-  .image-icon {
-    height: 181px;
-    width: 184px;
-    position: relative;
-    object-fit: cover;
-  }
-  .logo-section {
-    overflow: hidden;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 5.5px 7px;
-  }
-  .control-de-acceso {
-    flex: 1;
-    position: relative;
-    font-size: 36px;
-    line-height: 25px;
-    display: inline-block;
-    font-family: "Roboto Condensed";
-    color: #fff;
-    text-align: center;
-    max-width: 100%;
-  }
-  .control-de-acceso-wrapper {
-    cursor: pointer;
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    padding: 18px 19px 13px;
-    background-color: #2a38db;
-    width: 556px;
-    border-radius: 10px;
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    max-width: 100%;
-  }
-  .control-de-acceso-wrapper:hover {
-    background-color: #525eff;
-    border: 1px solid rgba(51, 51, 51, 0.25);
-    box-sizing: border-box;
-  }
+.logo-section {
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 5.5px 7px;
+}
+
+.control-de-acceso {
+  flex: 1;
+  position: relative;
+  font-size: 36px;
+  line-height: 25px;
+  display: inline-block;
+  font-family: "Roboto Condensed";
+  color: #fff;
+  text-align: center;
+  max-width: 100%;
+}
+
+.control-de-acceso-wrapper {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 18px 19px 13px;
+  background-color: #2a38db;
+  width: 556px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 100%;  
+}
+
   .access-control,
   .login-selector {
     align-self: stretch;
@@ -60,6 +57,7 @@
     box-sizing: border-box;
     max-width: 100%;
   }
+
   .login-selector {
     flex-direction: row;
     align-items: flex-start;
@@ -103,6 +101,7 @@
     line-height: normal;
     letter-spacing: normal;
   }
+
   @media screen and (max-width: 1200px) {
     .login-selector {
       padding-left: 166px;
