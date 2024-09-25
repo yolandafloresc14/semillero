@@ -1,1 +1,40 @@
-<p>general works!</p>
+<div class="content">
+    <nz-card nzTitle="SEMANA 1">
+        <div>
+            <nz-breadcrumb>
+            <nz-breadcrumb-item>Inicio</nz-breadcrumb-item>
+            <nz-breadcrumb-item>Semana 1</nz-breadcrumb-item>
+            <nz-breadcrumb-item>Ver Estado</nz-breadcrumb-item>
+            </nz-breadcrumb>
+        </div>
+        <nz-collapse>
+            <nz-collapse-panel nzHeader="General" [nzActive]="true">
+                <nz-card nzTitle="Avisos">
+                    <p>Se comunica a los estudiantes que su examen será el día 05 de octubre</p>
+                    <div class="button-group">
+                        <button nz-button nzType="default">Borrar</button>
+                        <button nz-button nzType="primary">Editar</button>
+                    </div>
+                </nz-card>
+                <button nz-button nzType="link" class="add-button">
+                    <i nz-icon nzType="plus"></i> Agregar Avisos
+                </button>
+            </nz-collapse-panel>
+            <nz-collapse-panel nzHeader="Temas" [nzActive]="true">
+                <button nz-button nzType="link" class="add-button">
+                    <i nz-icon nzType="plus"></i> Agregar Temas
+                </button>
+            </nz-collapse-panel>
+            <nz-collapse-panel nzHeader="Test">
+                <button nz-button nzType="link" class="add-button">
+                    <i nz-icon nzType="plus"></i> Agregar Test
+                </button>
+            </nz-collapse-panel>
+            <nz-collapse-panel nzHeader="Examen">
+                <button nz-button nzType="link" class="add-button">
+                    <i nz-icon nzType="plus"></i> Agregar Examen
+                </button>
+            </nz-collapse-panel>
+        </nz-collapse>
+    </nz-card>
+</div>

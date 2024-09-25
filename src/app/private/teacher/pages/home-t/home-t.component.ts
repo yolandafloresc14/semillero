@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-home-t',
   standalone: true,
   imports: [
     NzCardModule,
-    NzGridModule
+    NzGridModule,
+    NzIconModule
   ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  templateUrl: './home-t.component.html',
+  styleUrl: './home-t.component.css'
 })
-
-export class HomeComponent {
+export class HomeTComponent {
 
 }

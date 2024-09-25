@@ -1,0 +1,22 @@
+.cards {
+    padding:20px;
+}
+
+.content-card {
+    margin-top: 20px;
+}
+
+.image-icon {
+    height: 150px;
+    width: 300px;
+    position: relative;
+    object-fit: cover;
+}
+
+.title {
+    margin-top: 20px;
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: medium;
+    color: #0616D6;
+}

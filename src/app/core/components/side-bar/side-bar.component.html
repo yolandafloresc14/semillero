@@ -5,13 +5,13 @@
       [nzTrigger]="null"
     >
       <ul nz-menu nzTheme="light" nzMode="inline">
-        <li nz-menu-item routerLink="home" routerLinkActive="active">
+        <li nz-menu-item [routerLink]="['/', currentRole, 'home']" routerLinkActive="active">
             <span nz-icon nzType="home"></span>
             <span>Inicio</span>
         </li>
         <li nz-submenu nzTitle="Semana 1" nzIcon="folder">
           <ul>
-            <li nz-menu-item routerLink="semana1-general" routerLinkActive="active">General</li>
+            <li nz-menu-item routerLink="perfil" routerLinkActive="active">General</li>
             <li nz-menu-item routerLink="semana1-temas" routerLinkActive="active">Temas</li>
             <li nz-menu-item routerLink="semana1-test" routerLinkActive="active">Test</li>
             <li nz-menu-item routerLink="semana1-examen" routerLinkActive="active">Examen</li>

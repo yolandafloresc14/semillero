@@ -1,1 +1,70 @@
-<p>docente-login works!</p>
+<div class="docente-login">
+    <main class="body">
+        <div class="welcome-section1">
+            <div class="bienvenido-group">
+                <h1 class="bienvenido1">¡Bienvenido!</h1>
+                <h2 class="ingrese-su-usuario1">Ingrese su usuario y contraseña</h2>
+            </div>
+            <div class="image-251"></div>
+        </div>
+        <div class="main2">
+            <div class="logo1">
+                <img class="icon1" alt="logo" src="assets/icon1.svg" />
+                <img class="image-icon2" loading="lazy" alt="logo institucional" src="assets/logo.png" />
+                <div class="institucin-educativa-ricardo-container">
+                    <div class="institucin-educativa-ricardo1">
+                        Institución Educativa Ricardo Palma - Quillo
+                    </div>
+                </div>
+            </div>
+            <div class="login-title1">
+                <div class="login-docente-wrapper">
+                    <h1 class="login-docente">LOGIN - DOCENTE</h1>
+                </div>
+            </div>
+            <div class="login-form-container1">
+                <div class="frame-docente">
+                    <div class="ttulo1">
+                        <!-- Formulario de login -->
+                        <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+                            <!-- Usuario -->
+                            <nz-form-item>
+                                <label>Usuario
+                                    <nz-form-control nzErrorTip="Please input your username!">
+                                        <nz-input-group nzPrefixIcon="user">
+                                            <input
+                                                type="text"
+                                                nz-input
+                                                formControlName="userName"
+                                                placeholder="Username"
+                                            />
+                                        </nz-input-group>
+                                    </nz-form-control>
+                                </label>
+                            </nz-form-item>
+                            
+                            <!-- Contraseña -->
+                            <nz-form-item>
+                                <label>Contraseña
+                                    <nz-form-control nzErrorTip="Please input your Password!">
+                                        <nz-input-group nzPrefixIcon="lock">
+                                            <input
+                                                type="password"
+                                                nz-input
+                                                formControlName="password"
+                                                placeholder="Password"
+                                            />
+                                        </nz-input-group>
+                                    </nz-form-control>
+                                </label>
+                            </nz-form-item>
+                            
+                            <!-- Botón de Ingresar -->
+                            <button nz-button class="login-form-button" [nzType]="'primary'">Ingresar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

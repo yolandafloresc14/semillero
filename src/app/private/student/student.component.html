@@ -1,11 +1,10 @@
 <app-header [(despliegue)]="isDespliegue"/>
 <div class="dashboard-layout">
-    <app-side-bar [despliegue]="isDespliegue"/>
-
+  <app-side-bar [despliegue]="isDespliegue"/>
     <nz-layout>
         <nz-content>
           <div class="margen"></div>
           <router-outlet></router-outlet>
         </nz-content>
-      </nz-layout>
+    </nz-layout>
 </div>
