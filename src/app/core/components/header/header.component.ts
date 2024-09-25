@@ -1,12 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
-import { Router } from '@angular/router';
-import { AuthService } from '../../servicios/autenticacion/autenticacion.service';
+import { UserService } from '../../servicios/usuario/usuario.service';
 
 @Component({
   selector: 'app-header',
@@ -17,25 +16,34 @@ import { AuthService } from '../../servicios/autenticacion/autenticacion.service
     NzIconModule,
     NzBreadCrumbModule,
     NzMenuModule,
-    NzDropDownModule,
+    NzDropDownModule
   ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css',
+  styleUrls: ['./header.component.css'] // Cambié "styleUrl" por "styleUrls"
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   @Input() despliegue?: boolean;
   @Output() despliegueChange = new EventEmitter<boolean>();
 
-  constructor(private authService: AuthService, private router: Router) {}
+  userName: string | null = ''; // Propiedad para almacenar el nombre de usuario
+
+  constructor(private userService: UserService) {}
+
+  ngOnInit(): void {
+    this.loadUserName(); // Cargar el nombre del usuario al inicializar el componente
+  }
 
   cambiar() {
     this.despliegue = !this.despliegue;
     this.despliegueChange.emit(this.despliegue);
-    console.log('Esto funciona');
+    console.log("Esto funciona");
   }
 
-  logout() {
-    this.authService.logout();
-    this.router.navigate(['/login']);
+  // Método para cargar el nombre del usuario desde el UserService
+  loadUserName(): void {
+    const userInfo = this.userService.getUserInfo();
+    if (userInfo) {
+      this.userName = `${userInfo.nombres} ${userInfo.apellidos}`;
+    }
   }
 }

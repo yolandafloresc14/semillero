@@ -2,22 +2,25 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { TokenService } from '../Token/token.service';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://109.199.104.41:3001/api_semillero/alumnos/login'; // URL de Login
+  private apiUrl = 'http://109.199.104.41:3001/api_semillero/alumnos/login';  // URL de Login
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private tokenService: TokenService) {}  // Inyectar el TokenService
 
   // Método para iniciar sesión
   login(usuario: string, clave: string): Observable<any> {
     return this.http.post<any>(this.apiUrl, { usuario, clave }).pipe(
-      map((response) => {
-        // Si el login es exitoso, guardar el token
+      map(response => {
+        // Si el login es exitoso, guardar el token utilizando el TokenService
         if (response && response.token) {
-          localStorage.setItem('authToken', response.token);
+          this.tokenService.saveToken(response.token);
+          const decodedToken = this.tokenService.decodeToken();
+          console.log('Información del usuario decodificada:', decodedToken);
         }
         return response;
       }),
@@ -25,10 +28,15 @@ export class AuthService {
     );
   }
 
+  // Método para cerrar sesión
+  logout(): void {
+    this.tokenService.removeToken();
+  }
+
   // Manejo de errores
   private handleError(error: HttpErrorResponse): Observable<never> {
     let errorMessage = 'Ocurrió un error desconocido.';
-
+    
     if (error.error instanceof ErrorEvent) {
       // Error del lado del cliente
       errorMessage = `Error del cliente: ${error.error.message}`;
@@ -37,22 +45,8 @@ export class AuthService {
       errorMessage = `Código del servidor: ${error.status}\nMensaje: ${error.message}`;
     }
 
+
     console.error(errorMessage);
     return throwError(() => new Error(errorMessage));
-  }
-
-  // Método para obtener el token
-  getToken() {
-    return localStorage.getItem('authToken');
-  }
-
-  // Método para cerrar sesión
-  logout() {
-    localStorage.removeItem('authToken');
-  }
-
-  // Método para verificar si el usuario está autenticado
-  isAuthenticated() {
-    return !!localStorage.getItem('authToken');
   }
 }

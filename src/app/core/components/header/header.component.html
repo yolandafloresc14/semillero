@@ -1,15 +1,14 @@
 <nz-layout class="layout">
   <nz-header class="header">
     <div class="header-item">
-      <span
-        class="header-menu-icon"
-        nz-icon
-        nzType="menu"
+      <span class="header-menu-icon"
+        nz-icon 
+        nzType="menu" 
         nzTheme="outline"
         (click)="cambiar()"
       ></span>
       <div class="header-logo">
-        <img src="assets/logo.png" alt="Logo Escuela" />
+        <img src="assets/logo.png" alt="Logo Escuela"/>
       </div>
     </div>
     <div class="header-item">
@@ -22,13 +21,9 @@
     </div>
     <div class="header-item">
       <div class="header__user">
-        <div class="header__user-name">Nombre de Usuario</div>
-        <nz-avatar
-          class="header__user-avatar"
-          [nzSize]="40"
-          nzIcon="user"
-          nzSrc="assets/private/interested/user-avatar_000001.jpg"
-        ></nz-avatar>
+        <!-- Aquí mostramos el nombre de usuario -->
+        <div class="header__user-name">{{ userName || 'Nombre de Usuario' }}</div>
+        <nz-avatar class="header__user-avatar" [nzSize]="40" nzIcon="user" nzSrc="assets/private/interested/user-avatar_000001.jpg"></nz-avatar>
       </div>
       <a nz-dropdown [nzDropdownMenu]="menu">
         <span
@@ -48,7 +43,7 @@
             <span nz-icon nzType="star" nzTheme="outline"></span>
             Calificaciones
           </li>
-          <li nz-menu-item nzDanger (click)="logout()">
+          <li nz-menu-item nzDanger>
             <span nz-icon nzType="logout" nzTheme="outline"></span>
             Cerrar Sesión
           </li>
@@ -57,6 +52,7 @@
     </div>
   </nz-header>
 </nz-layout>
+
 
 <!-- <nz-layout>
       <nz-sider nzWidth="200px" nzTheme="light">
