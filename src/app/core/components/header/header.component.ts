@@ -6,6 +6,7 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { UserService } from '../../servicios/usuario/usuario.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,8 @@ import { UserService } from '../../servicios/usuario/usuario.service';
     NzIconModule,
     NzBreadCrumbModule,
     NzMenuModule,
-    NzDropDownModule
+    NzDropDownModule,
+    RouterLink
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'] // Cambié "styleUrl" por "styleUrls"
