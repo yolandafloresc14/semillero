@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, NonNullableFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -11,26 +11,26 @@ import { AuthService } from '../../../core/servicios/autenticacion/autenticacion
   selector: 'app-student-login',
   standalone: true,
   imports: [
-    ReactiveFormsModule,  
+    ReactiveFormsModule,
     NzFormModule,
     NzInputModule,
     NzButtonModule,
-    NzCheckboxModule
+    NzCheckboxModule,
   ],
   templateUrl: './student-login.component.html',
-  styleUrls: ['./student-login.component.css']
+  styleUrls: ['./student-login.component.css'],
 })
 export class StudentLoginComponent {
   validateForm: FormGroup = this.fb.group({
     userName: ['', [Validators.required]],
     password: ['', [Validators.required]],
-    remember: [true]
+    remember: [true],
   });
 
   constructor(
     private fb: NonNullableFormBuilder,
     private router: Router,
-    private authService: AuthService  // Inyectar el servicio de autenticación
+    private authService: AuthService // Inyectar el servicio de autenticación
   ) {}
 
   submitForm(): void {
@@ -38,7 +38,8 @@ export class StudentLoginComponent {
       const { userName, password } = this.validateForm.value;
 
       // Llamar al servicio para autenticar al usuario
-      this.authService.login(userName, password).subscribe(
+      this.authService.login(userName, password, 'student').subscribe(
+        //El nuevo parametro es para especificar el rol del usuario y asi crear una cookie con el nombre del rol
         (response) => {
           console.log('Login exitoso', response);
           // Redirigir al estudiante a la página correspondiente
@@ -50,7 +51,7 @@ export class StudentLoginComponent {
       );
     } else {
       // Marcar todos los controles como sucios para que muestren errores si no son válidos
-      Object.values(this.validateForm.controls).forEach(control => {
+      Object.values(this.validateForm.controls).forEach((control) => {
         if (control.invalid) {
           control.markAsDirty();
           control.updateValueAndValidity({ onlySelf: true });
@@ -59,4 +60,3 @@ export class StudentLoginComponent {
     }
   }
 }
-

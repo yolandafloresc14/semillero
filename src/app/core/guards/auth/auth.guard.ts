@@ -1,14 +1,26 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
-import { AuthService } from '../../servicios/autenticacion/autenticacion.service';
+import { TokenService } from '../../servicios/Token/token.service';
+import { CookieService } from 'ngx-cookie-service';
 
+//Este guardia se encargara de verificar si el usuario esta autenticado al ingresar a cualquiera de los 2 login que hay
 export const authGuard: CanActivateFn = (route, state) => {
-  const authService = inject(AuthService);
+  const tokenService = inject(TokenService);
   const router = inject(Router);
+  const cookieService = inject(CookieService);
 
-  if (!authService.isAuthenticated()) {
-    router.navigate(['/login']);
+  const token = tokenService.getToken();
+  const userRole = cookieService.get('userRole');
+
+  if (!token || !userRole) {
+    return true;
   }
 
-  return true;
+  if (userRole === 'student') {
+    router.navigate(['/student']);
+  }
+  if (userRole === 'teacher') {
+    router.navigate(['/teacher']);
+  }
+  return false;
 };

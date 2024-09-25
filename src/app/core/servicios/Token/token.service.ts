@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TokenService {
+  constructor(private cookieService: CookieService) {}
 
-  // Guardar el token en localStorage
+  // Guardar el token en una cookie
   saveToken(token: string): void {
-    localStorage.setItem('authToken', token);
+    this.cookieService.set('authToken', token, 1); // 1 día de expiración
   }
 
-  // Obtener el token desde localStorage
+  // Obtener el token desde la cookie
   getToken(): string | null {
-    return localStorage.getItem('authToken');
+    return this.cookieService.get('authToken');
   }
 
   // Decodificar el token
@@ -32,6 +34,6 @@ export class TokenService {
 
   // Eliminar el token
   removeToken(): void {
-    localStorage.removeItem('authToken');
+    this.cookieService.delete('authToken');
   }
 }
