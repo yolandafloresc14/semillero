@@ -5,11 +5,12 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
 @Component({
   selector: 'app-personal-info-student',
   standalone: true,
-  imports: [HeaderComponent, NzLayoutModule, NzBreadCrumbModule, NzCardModule, NzGridModule],
+  imports: [HeaderComponent, NzLayoutModule, NzBreadCrumbModule, NzCardModule, NzGridModule, NzAvatarModule],
   templateUrl: './personal-info-student.component.html',
   styleUrls: ['./personal-info-student.component.css']
 })
