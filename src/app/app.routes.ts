@@ -9,20 +9,22 @@ import { TeacherComponent } from './private/teacher/teacher.component';
 import { PersonalInfoStudentComponent } from './private/student/pages/personal-info-student/personal-info-student.component';
 import { HomeTComponent } from './private/teacher/pages/home-t/home-t.component';
 import { GeneralComponent } from './private/student/pages/weeks/week-1/general/general.component';
+import { GeneralTComponent } from './private/teacher/pages/weeks/general-t/general-t.component';
 
 export const routes: Routes = [
     {path: 'student', component: StudentComponent,
         children: [
             {path: '', redirectTo: 'home', pathMatch: 'full'},
             {path: 'home', component: HomeComponent},
-            {path: 'perfil', component: PersonalInfoStudentComponent}
+            {path: 'perfil', component: PersonalInfoStudentComponent},
+            {path: 'general', component: GeneralComponent}
         ]
     },
     {path: 'teacher', component: TeacherComponent,
         children: [
             {path: '', redirectTo: 'home', pathMatch: 'full'},
             {path: 'home', component: HomeTComponent},
-            {path: 'general', component: GeneralComponent}
+            {path: 'general', component: GeneralTComponent}
         ]
     },
     {path: 'login', component: AuthenticationComponent},
