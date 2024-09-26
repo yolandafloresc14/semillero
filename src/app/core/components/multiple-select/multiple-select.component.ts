@@ -5,11 +5,12 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { EnunciadoService } from '../../servicios/examen/enunciado/enunciado.service';
 import { RespuestaService } from '../../servicios/examen/respuesta/respuesta.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-multiple-select',
   standalone: true,
-  imports: [NzSelectModule, NzFormModule, NzIconModule, ReactiveFormsModule],
+  imports: [NzSelectModule, NzFormModule, NzIconModule, ReactiveFormsModule, CommonModule],
   templateUrl: './multiple-select.component.html',
   styleUrls: ['./multiple-select.component.css'],
   viewProviders: [{
