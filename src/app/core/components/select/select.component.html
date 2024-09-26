@@ -1,0 +1,40 @@
+<nz-form-item>
+    <nz-form-label [nzSpan]="null">{{ label }}</nz-form-label>
+    <nz-form-control
+      [nzSpan]="null"
+      nzHasFeedback
+      [nzErrorTip]="'¡Debe seleccionar un ' + prefijo + ' ' + label + '!'"
+    >
+      <nz-select
+        nzShowSearch
+        nzAllowClear
+        [nzPlaceHolder]="'Seleccione un ' + prefijo + ' ' + label"
+        [formControlName]="controlName!"
+        (ngModelChange)="cambio($event)"
+        (nzFocus)="cargarDatos()"
+      >
+        <!-- Verifica si no está cargando -->
+        <ng-container *ngIf="!cargando">
+          <!-- Itera sobre `optionsData` -->
+          <nz-option 
+            *ngFor="let item of optionsData; trackBy: trackByFn"
+            [nzValue]="item[atributte[0]]" 
+            [nzLabel]="item[atributte[1]]"
+            [nzDisabled]="atributte[2] ? item[atributte[2]] === 0 : false">
+          </nz-option>
+  
+          <!-- Si no hay datos en `optionsData`, muestra un mensaje -->
+          <ng-container *ngIf="optionsData.length === 0">
+            <nz-option [nzValue]="null" nzLabel="No hay datos"></nz-option>
+          </ng-container>
+        </ng-container>
+  
+        <!-- Si está cargando, muestra un mensaje de carga -->
+        <nz-option nzDisabled nzCustomContent *ngIf="cargando">
+          <span nz-icon nzType="loading" class="loading-icon"></span>
+          Cargando datos...
+        </nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  

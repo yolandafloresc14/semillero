@@ -10,6 +10,7 @@ import { PersonalInfoStudentComponent } from './private/student/pages/personal-i
 import { HomeTComponent } from './private/teacher/pages/home-t/home-t.component';
 import { GeneralComponent } from './private/student/pages/weeks/week-1/general/general.component';
 import { GeneralTComponent } from './private/teacher/pages/weeks/general-t/general-t.component';
+import { ExamenStudentComponent } from './private/student/pages/examen-student/examen-student.component';
 
 export const routes: Routes = [
     {path: 'student', component: StudentComponent,
@@ -17,7 +18,9 @@ export const routes: Routes = [
             {path: '', redirectTo: 'home', pathMatch: 'full'},
             {path: 'home', component: HomeComponent},
             {path: 'perfil', component: PersonalInfoStudentComponent},
-            {path: 'general', component: GeneralComponent}
+            {path: 'general', component: GeneralComponent},
+            {path: 'examen', component: ExamenStudentComponent}
+
         ]
     },
     {path: 'teacher', component: TeacherComponent,
