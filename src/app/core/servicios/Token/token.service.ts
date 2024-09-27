@@ -10,7 +10,7 @@ export class TokenService {
 
   // Guardar el token en una cookie
   saveToken(token: string): void {
-    this.cookieService.set('authToken', token, 1); // 1 día de expiración
+    this.cookieService.set('authToken', token, 0.125); // 1 día de expiración
   }
 
   // Obtener el token desde la cookie

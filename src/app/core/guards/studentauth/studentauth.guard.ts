@@ -1,10 +1,9 @@
-import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { TokenService } from '../../servicios/Token/token.service';
+import { inject } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 
-//Este guardia se encargara de verificar si el usuario esta autenticado al ingresar a cualquiera de los 2 login que hay
-export const authGuard: CanActivateFn = (route, state) => {
+export const studentauthGuard: CanActivateFn = (route, state) => {
   const tokenService = inject(TokenService);
   const router = inject(Router);
   const cookieService = inject(CookieService);
@@ -12,7 +11,7 @@ export const authGuard: CanActivateFn = (route, state) => {
   const token = tokenService.getToken();
   const userRole = cookieService.get('userRole');
 
-  //verifico que existan ambos, en caso falte uno entonces se permite la entrada al login
+  //verifico que existan ambos
   if (!token || !userRole) {
     if (userRole) {
       // si existe el rol pero no el token entonces se elimina el rol
@@ -23,14 +22,12 @@ export const authGuard: CanActivateFn = (route, state) => {
       // mismo caso pero con el token
       tokenService.removeToken();
     }
-    return true;
+    return false;
   }
 
-  if (userRole === 'student') {
-    router.navigate(['/student']);
+  if (userRole !== 'student') {
+    return false;
   }
-  if (userRole === 'teacher') {
-    router.navigate(['/teacher']);
-  }
-  return false;
+
+  return true;
 };

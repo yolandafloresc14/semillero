@@ -26,7 +26,7 @@ export class AuthService {
           this.tokenService.saveToken(response.token);
 
           // guardar una cookie con el rol del usuario
-          this.cookieService.set('userRole', role, 1); // 1 día de expiración
+          this.cookieService.set('userRole', role, 0.125); // en 3 horas se elimina
           //tiene el mismo tiempo de expiracion que el token
 
           const decodedToken = this.tokenService.decodeToken();
