@@ -7,6 +7,8 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { UserService } from '../../servicios/usuario/usuario.service';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '../../servicios/autenticacion/autenticacion.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -23,13 +25,18 @@ import { RouterLink } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'] // Cambié "styleUrl" por "styleUrls"
 })
+
 export class HeaderComponent implements OnInit {
   @Input() despliegue?: boolean;
   @Output() despliegueChange = new EventEmitter<boolean>();
 
   userName: string | null = ''; // Propiedad para almacenar el nombre de usuario
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.loadUserName(); // Cargar el nombre del usuario al inicializar el componente
@@ -47,5 +54,13 @@ export class HeaderComponent implements OnInit {
     if (userInfo) {
       this.userName = `${userInfo.nombres} ${userInfo.apellidos}`;
     }
+  }
+
+  logout(): void {
+    // Llama al método logout del servicio de autenticación
+    this.authService.logout();
+    
+    // Redirige a la página de inicio de sesión o la que consideres adecuada
+    this.router.navigate(['/login']);
   }
 }

@@ -7,6 +7,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { AuthService } from '../../../core/servicios/autenticacion/autenticacion.service';
+
 @Component({
   selector: 'app-student-login',
   standalone: true,
@@ -38,7 +39,7 @@ export class StudentLoginComponent {
       const { userName, password } = this.validateForm.value;
 
       // Llamar al servicio para autenticar al usuario
-      this.authService.login(userName, password, 'student').subscribe(
+      this.authService.loginAlumno(userName, password, 'student').subscribe(
         //El nuevo parametro es para especificar el rol del usuario y asi crear una cookie con el nombre del rol
         (response) => {
           console.log('Login exitoso', response);

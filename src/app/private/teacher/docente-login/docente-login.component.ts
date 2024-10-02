@@ -6,6 +6,7 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { AuthService } from '../../../core/servicios/autenticacion/autenticacion.service';
 
 @Component({
   selector: 'app-docente-login',
@@ -28,12 +29,28 @@ export class DocenteLoginComponent {
     remember: [true]
   });
 
-  constructor(private fb: NonNullableFormBuilder, private router: Router) {}  // Inyectar el Router
+  constructor(
+    private fb: NonNullableFormBuilder, 
+    private router: Router,
+    private authService: AuthService 
+  ) {}  // Inyectar el Router
 
   submitForm(): void {
     if (this.validateForm.valid) {
-      console.log('submit', this.validateForm.value);
-      this.router.navigate(['/teacher']);
+      const { userName, password } = this.validateForm.value;
+
+      this.authService.loginDocente(userName, password, 'teacher').subscribe(
+        //El nuevo parametro es para especificar el rol del usuario y asi crear una cookie con el nombre del rol
+        (response) => {
+          console.log('Login exitoso', response);
+          // Redirigir al estudiante a la página correspondiente
+          this.router.navigate(['/teacher']);
+        },
+        (error) => {
+          console.error('Error en la autenticación', error);
+        }
+      );
+    
     } else {
       Object.values(this.validateForm.controls).forEach(control => {
         if (control.invalid) {

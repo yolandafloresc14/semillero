@@ -34,6 +34,6 @@ export class TokenService {
 
   // Eliminar el token
   removeToken(): void {
-    this.cookieService.delete('authToken');
+    this.cookieService.delete('authToken','/');
   }
 }
