@@ -1,0 +1,89 @@
+<div style="padding: 0 3em 1.5em">
+    <nz-progress
+      [nzPercent]="porcentaje"
+      [nzStrokeColor]="{ '0%': '#108ee9', '100%': '#87d068' }"
+      nzStatus="active"
+    ></nz-progress>
+  </div>
+  
+  <main class="exam-container">
+    <section class="details-card">
+      <h2 class="details-title">Detalles</h2>
+  
+      <div class="course-info">
+        <div class="info-item">
+          <span nz-icon nzType="file" nzTheme="outline"></span>
+          <span>Curso</span>
+        </div>
+        <span>{{ courseTitle }}</span>
+      </div>
+  
+      <nz-divider class="divider"></nz-divider>
+  
+      <div class="passing-percentage">
+        <div class="info-item">
+          <span nz-icon nzType="percentage" nzTheme="outline"></span>
+          <span>Porcentaje para aprobar</span>
+        </div>
+        <span class="percentage">{{ passingPercentage }}</span>
+      </div>
+  
+      <div class="duration">
+        <div class="info-item">
+          <span nz-icon nzType="field-time" nzTheme="outline"></span>
+          <span>Duración</span>
+        </div>
+        <span>{{ duration }}</span>
+      </div>
+    </section>
+  
+    <div class="exam" style="max-width: 900px; margin: 0 auto;">
+      <h1 class="exam-title" style="font-size: medium; text-align: center; margin-bottom: 0">
+        TEST
+      </h1>
+  
+      <form nz-form [formGroup]="modalForm" style="padding: 3em; width: 100%;">
+        <h2 style="text-align: left;">Pregunta {{ preguntaActual + 1 }} de {{ enunciados.length }}</h2>
+  
+        <!-- Mostrar una pregunta a la vez -->
+        <ng-container *ngIf="enunciados && enunciados.length > 0">
+          <div nz-row style="margin-bottom: 20px;">
+            <div nz-col [nzSpan]="24">
+              <label
+                style="font-weight: bold; display: block; margin-bottom: 10px; font-size: 16px;">
+                {{ enunciados[preguntaActual].numero }}. {{ enunciados[preguntaActual].descripcion }}
+              </label>
+            </div>
+  
+            <!-- Opciones de respuesta -->
+            <div nz-col [nzSpan]="24">
+              <app-radio-group-front
+                [controlName]="'e_' + enunciados[preguntaActual].id"
+                [gender]="'F'"
+                [options]="obtenerRespuestasPorEnunciado(enunciados[preguntaActual].id)"
+                (change)="setPorcentaje()"
+                style="display: block; margin-left: 20px;"
+              ></app-radio-group-front>
+            </div>
+          </div>
+        </ng-container>
+  
+        <!-- Botones de navegación -->
+        <nz-divider></nz-divider>
+        <div nz-row nzJustify="space-between">
+          <div nz-col>
+            <button nz-button nzType="default" [disabled]="preguntaActual === 0" (click)="anteriorPregunta()">
+              Anterior
+            </button>
+          </div>
+  
+          <div nz-col>
+            <button nz-button nzType="primary" (click)="siguientePregunta()">
+              {{ preguntaActual < enunciados.length - 1 ? 'Siguiente' : 'Enviar Respuestas' }}
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+  
