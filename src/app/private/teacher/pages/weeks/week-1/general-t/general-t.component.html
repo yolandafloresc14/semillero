@@ -21,7 +21,12 @@
                 </button>
             </nz-collapse-panel>
             <nz-collapse-panel nzHeader="Temas" [nzActive]="true">
-                <button nz-button nzType="link" class="add-button">
+                <div *ngIf="mostrarTemas">
+                    <nz-card>
+                        <app-temas></app-temas>
+                    </nz-card>
+                </div>
+                <button nz-button nzType="link" class="add-button" (click)="desplegarTemas()">
                     <i nz-icon nzType="plus"></i> Agregar Temas
                 </button>
             </nz-collapse-panel>
@@ -31,6 +36,9 @@
                 </button>
             </nz-collapse-panel>
             <nz-collapse-panel nzHeader="Examen">
+                <div>
+                    <app-examen-t></app-examen-t>
+                </div>
                 <button nz-button nzType="link" class="add-button">
                     <i nz-icon nzType="plus"></i> Agregar Examen
                 </button>

@@ -1,0 +1,41 @@
+<div class="temas">
+    <nz-form-item class="tema">
+        <nz-form-label [nzSpan]="4" >Nombre del Tema</nz-form-label>
+        <nz-form-control [nzSpan]="15" nzErrorTip="¡Ingrese su tema, por favor!">
+        <input id="note" type="text" nz-input formControlName="note" />
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label [nzSpan]="4">Descripcion</nz-form-label>
+        <nz-form-control [nzSpan]="15" nzErrorTip="¡Ingrese su tema, por favor!">
+        <textarea rows="5" nz-input></textarea>
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label [nzSpan]="4">Archivos Adicionales</nz-form-label>
+        <nz-form-control [nzSpan]="15">
+            <nz-upload
+                nzType="drag"
+                [nzMultiple]="true"
+                nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                (nzChange)="handleChange($event)"
+                >
+                <p class="ant-upload-drag-icon">
+                    <span nz-icon nzType="inbox"></span>
+                </p>
+                <p class="ant-upload-text">Click or drag file to this area to upload</p>
+                <p class="ant-upload-hint">
+                    Support for a single or bulk upload. Strictly prohibit from uploading company data or other band files
+                </p>
+            </nz-upload>
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-control [nzSpan]="15" [nzOffset]="4">
+        <button nz-button nzType="primary">Submit</button>
+        </nz-form-control>
+    </nz-form-item>
+</div>
