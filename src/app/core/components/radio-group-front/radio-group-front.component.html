@@ -1,17 +1,23 @@
 <nz-form-item>
-    <nz-form-label [nzSpan]="null" nzRequired>{{ label }}</nz-form-label>
-    <nz-form-control
-      [nzSpan]="null"
-      nzHasFeedback
-      [nzErrorTip]="'¡Debe seleccionar un' + prefijo + ' alternativa!'"
+  <nz-form-label [nzSpan]="null" nzRequired>{{ label }}</nz-form-label>
+  <nz-form-control
+    [nzSpan]="null"
+    nzHasFeedback
+    [nzErrorTip]="'¡Debe seleccionar un' + prefijo + ' alternativa!'"
+  >
+    <!-- Aquí corregimos el uso de *ngFor -->
+    <nz-radio-group
+      [formControlName]="controlName!"
+      (ngModelChange)="cambio($event)"
     >
-      <nz-radio-group
-        [formControlName]="controlName!"
-        (ngModelChange)="cambio($event)"
+      <!-- Cambia @for por *ngFor -->
+      <label
+        nz-radio
+        *ngFor="let option of options; let i = index"
+        [nzValue]="option.id"
       >
-        @for (option of options; track option; let i = $index) {
-        <label nz-radio [nzValue]="options[i].id">{{ options[i].texto }}</label>
-        }
-      </nz-radio-group>
-    </nz-form-control>
-  </nz-form-item>
+        {{ option.descripcion }}
+      </label>
+    </nz-radio-group>
+  </nz-form-control>
+</nz-form-item>

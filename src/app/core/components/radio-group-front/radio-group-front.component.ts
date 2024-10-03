@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { ControlContainer, ReactiveFormsModule } from '@angular/forms';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { Respuesta } from '../../interfaces/utilidades/respuesta.interface';
 
 @Component({
   selector: 'app-radio-group-front',
@@ -18,7 +19,7 @@ import { NzRadioModule } from 'ng-zorro-antd/radio';
 export class RadioGroupFrontComponent {
   @Input() controlName?:string;
   @Input() label?:string;
-  @Input() options:any[] = []
+  @Input() options:Respuesta[] = []
   @Input() gender?:string;
   @Input() disabled:boolean = false;
   
@@ -31,4 +32,6 @@ export class RadioGroupFrontComponent {
   cambio(event:any) {
     this.change.emit(event);
   }
+
+  
 }

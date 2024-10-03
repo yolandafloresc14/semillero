@@ -1,5 +1,17 @@
 [nz-radio] {
-    display: block;
+    display: flex;
     height: 32px;
     line-height: 32px;
+  }
+
+  nz-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Para que haya un espacio uniforme entre las opciones */
+  }
+
+  label[nz-radio] {
+    margin-left: 8px; /* Ajuste de margen para separar el texto del botón de radio */
+    font-size: 16px; /* Ajustar el tamaño de la fuente */
+    line-height: 1.5; /* Mantener el espacio entre líneas adecuado */
   }
